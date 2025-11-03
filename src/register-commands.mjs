@@ -23,6 +23,8 @@ if (missingVars.length > 0) {
   console.error(`   ${missingVars.join(', ')}`);
   console.error('Create a .env file with these variables set.');
   process.exit(1);
+  process.exitCode = 1;
+  return;
 }
 
 const { DISCORD_TOKEN, CLIENT_ID, GUILD_ID } = process.env;
